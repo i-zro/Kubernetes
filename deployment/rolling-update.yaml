@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eshop-payment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: payment
+      environment: production
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: payment
+        environment: production
+    spec:
+      containers:
+      - image: nginx:1.16
+        name: nginx
+        resources: {}
+status: {}
