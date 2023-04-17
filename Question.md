@@ -1,3 +1,29 @@
+# Taint, Toleration, Node Affinity 구분
+
+## Taint, Toleration
+각 노드에 Taint(오염)을 설정해서 감염으로부터 Toleration(용인)된 pod만 해당 노드에서 실행시켜준다.
+
+![image](https://user-images.githubusercontent.com/48379869/232633236-f3eccc64-276b-4028-8539-63cb7a8b6e6c.png)
+
+Pod 1은 red와 blue taint에 대해 toleration이 있기 때문에 Node1, Node2에 실행될 수 있고
+
+Pod 2는 허용된 toleration이 없기 때문에 3 곳 모두에서 실행될 없고
+
+Pod 3은 green toleration이 있기 때문에 Node 3에서 실행될 수 있다.
+
+- taint 설정 시에는 kubectl taint nodes {NODE_NAME} key=value:{TAINT_EFFECT}, 해제 시에는 kubectl taint nodes {NODE_NAME} key=value:{TAINT_EFFECT}-
+
+## Node Affinity
+
+- pod가 특정 노드에만 배포되게 하는 것 
+
+ex) `disktype: ssd`라는 requiredDuringSchedulingIgnoredDuringExecution 노드 어피니티를 가진 파드 → 파드가 `disktype=ssd` 레이블이 있는 노드에만 스케줄될 것
+
+## Taint와 Affinity 차이
+
+taint가 특정노드에 pod가 배포되지 못하도록 하는 정책이라면, affinity는 pod를 특정 노드에만 배포되도록 하는 정책
+
+---
 
 # (미해결) 왜 pending state인지 어떻게 알지? (Manual Scheduling)
 
