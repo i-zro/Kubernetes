@@ -1,3 +1,15 @@
+# (미해결) 언제 run쓰고 언제 expose 써야할 지 모르겠음. (Imperative Commands)
+
+`230417`
+
+- Create a pod called `httpd` using the image `httpd:alpine` in the default namespace. Next, create a service of type `ClusterIP` by the same name `(httpd)`. The target port for the service should be `80`. Try to do this with as few steps as possible.
+
+해당 문제의 정답이 kubectl run httpd --image=httpd:alpine --port 80 --expose 이건데 뭔가 expose 와 clusterip에 꽂혀서 헤매고 있었음.
+
+둘이 어떻게 구분하는지? 생각회로가 궁금함.
+
+---
+
 # (미해결) yaml 파일 label 구조 (ReplicaSets)
 
 `230416`
