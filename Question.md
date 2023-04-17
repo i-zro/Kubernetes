@@ -1,3 +1,22 @@
+
+# (미해결) 왜 pending state인지 어떻게 알지? (Manual Scheduling)
+
+`230417`
+
+- Why is the POD in a pending state? Inspect the environment for various kubernetes control plane components.
+
+해답이
+
+Run the command: kubectl get pods --namespace kube-system to see the status of scheduler pod. We have removed the scheduler from this Kubernetes cluster. As a result, as it stands, the pod will remain in a pending state forever.
+
+위와 같은데, scheduler라는 pod가 없어서 scheduler가 없다는 건지 진짜 모르겠음.
+
+뭐 어캐 찾는겨?
+
+<img width="637" alt="12" src="https://user-images.githubusercontent.com/48379869/232472693-9d2a62b2-82e6-4092-9f33-27ad63b000e6.png">
+
+---
+
 # (미해결) 언제 run쓰고 언제 expose 써야할 지 모르겠음. (Imperative Commands)
 
 `230417`
