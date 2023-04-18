@@ -1,3 +1,7 @@
+
+
+---
+
 # Taint, Toleration, Node Affinity 구분
 
 ## Taint, Toleration
